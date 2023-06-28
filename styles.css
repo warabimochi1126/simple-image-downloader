@@ -1,0 +1,12 @@
+/* styles.css */
+
+input,
+label,
+div,
+button {
+    font-size: 2rem;
+}
+
+img {
+    max-width: 300px;
+}

@@ -1,0 +1,55 @@
+{
+  "name": "image-downloader",
+  "version": "1.0.0",
+  "main": "main.js",
+  "description": "web上から簡単に画像をダウンロードするアプリです",
+  "author": "warabimochi",
+  "scripts": {
+    "start": "electron .",
+    "dev": "nodemon --watch . --exec \"electron .\"",
+    "build": "run-s build:*",
+    "build:mac64": "electron-builder --mac --x64",
+    "build:mac-arm": "electron-builder --mac --arm64",
+    "build:mac-univ": "electron-builder --mac --universal",
+    "build:win64": "electron-builder --win --x64"
+  },
+  "repository": "https://github.com/electron/electron-quick-start",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^21.1.1",
+    "electron-builder": "^24.4.0",
+    "nodemon": "^2.0.22",
+    "npm-run-all": "^4.1.5"
+  },
+  "dependencies": {
+    "@playwright/test": "^1.35.1",
+    "chrome-paths": "^1.0.1",
+    "image-downloader": "^4.3.0",
+    "playwright": "^1.35.1"
+  },
+  "build": {
+    "productName": "Image Downloader",
+    "appId": "com.codemafia.image-downloader",
+    "mac": {
+      "target": [
+        "dmg"
+      ],
+      "icon": "icon.png"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
